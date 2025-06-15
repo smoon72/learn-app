@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  standalone: true
 })
 export class SidebarComponent {
 
   topics!: string[];
+
+  @Output() eventEmitter = new EventEmitter();
 
   ngOnInit() {
     // get it from HTTP mock rquest
@@ -16,7 +17,7 @@ export class SidebarComponent {
   }
 
   navigateMainPage(topic: string): void {
-    console.log(topic);
+    this.eventEmitter.emit(topic);
   }
 
 }

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-
+  title: string = "Welcome";
+  
+  displayTopic(event: any){
+    this.title = event;
+  }
 }

@@ -22,26 +22,21 @@ export class AppComponent implements OnInit, OnDestroy {
   ];
 
   constructor() {
-    console.log('AppComponent constructor');
   }
 
   ngOnInit() {
     of(2, 3, 4, 5).subscribe(
-      number => console.log(number)
     );
-    console.log('AppComponent initialized');
 
     this.apple$ = from(this.apples).pipe(
-      tap(x => console.log(x)),
       map(x => ({...x, color: "red"})),
-      tap(x => console.log(x))
+      // tap(x => console.log(x))
     ).subscribe();
 
 
 
   }
   ngOnDestroy() {
-    console.log('AppComponent destroyed');
   }
 
 }
