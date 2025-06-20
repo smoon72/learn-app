@@ -12,7 +12,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 
-
+// const routes: Routes = [
+//   {path: "*", component: }
+// ]
 @NgModule({
   declarations: [
     AppComponent,
