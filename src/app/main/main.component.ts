@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TopicService } from '../services/TopicService';
+import { ITopic } from 'src/models/ITopic';
 
 @Component({
   selector: 'app-main',
@@ -7,8 +9,41 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   title: string = "Welcome";
+  topicList: ITopic[] = [];
+
+  constructor(
+    private topicService: TopicService,
+  ){}
+
+  ngOnInit() {
+    // I think this is what they mean by procedural vs declarative
+    this.topicService.getTopics().subscribe(
+      data => {
+        this.topicList = data;
+        this.getSubTopics(this.topicList);
+      }
+    )
+  }
   
   displayTopic(event: any){
     this.title = event;
+  }
+
+  getSubTopics(topicList: ITopic[]): ITopic[] {
+    let sideBarList: ITopic[] = [];
+
+    topicList.forEach(topic => {
+      let subTopic: any = {};
+      let subTopicList: any[] = [];
+      
+      topic.subTopicList?.forEach(subTopic => {
+        subTopicList.push(subTopic.name);
+      })
+      
+      subTopic.name = topic.name;
+      subTopic.subTopicList = subTopicList;
+      sideBarList.push(subTopic);
+    })
+    return sideBarList;
   }
 }

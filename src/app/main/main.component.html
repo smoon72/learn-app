@@ -1,11 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
-  <!-- position="end", to amke it right side -->
+  <!-- position="end", to make it right side -->
   <mat-sidenav opened="true" mode="side" position="start">
-      <app-sidebar (eventEmitter)="displayTopic($event)">
+    <!--  side bar shouldn't have to filter it out -->
+    <app-sidebar  
+        [sideBarList]="getSubTopics(topicList)"
+        (eventEmitter)="displayTopic($event)">
       </app-sidebar>
   </mat-sidenav>
 
   <mat-sidenav-content>
+    <!-- Probably want to add a router  -->
     <div>{{ title }}</div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -9,7 +9,7 @@ import { TopicService } from '../services/TopicService';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  topicList!: ITopic[];
+  @Input() sideBarList!: ITopic[];
 
   @Output() eventEmitter = new EventEmitter();
 
@@ -18,13 +18,13 @@ export class SidebarComponent {
   ){};
 
   ngOnInit() {
-    this.topicService.getTopics().subscribe(
-      response => this.topicList = response
-    )
   }
 
   navigateMainPage(topic: string): void {
     this.eventEmitter.emit(topic);
   }
 
+  show(subTopic: any) {
+    console.log(subTopic);
+  }
 }

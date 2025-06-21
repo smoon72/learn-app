@@ -2,10 +2,10 @@
 
 export interface ITopic {
   name:string,
-  subTopicList: [ 
+  subTopicList?: [ 
     {
-      subTopic: string,
-      flashcards: [
+      name: string,
+      flashcards?: [
         {
           word:string,
           definition: string

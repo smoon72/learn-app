@@ -1,5 +1,19 @@
-<mat-nav-list *ngFor="let topic of topicList">
-  <div (click)="navigateMainPage(topic.name)">
-    {{ topic.name }}
+<mat-nav-list>
+  <div 
+    *ngFor="let topic of sideBarList"
+    (click)="navigateMainPage(topic.name)">
+      {{ topic.name }}
+      <div>
+        <mat-icon>
+          arrow_drop_down
+        </mat-icon>
+      </div>
+      <ul >
+        <li 
+          *ngFor="let subTopic of topic.subTopicList"
+          (click)="show(subTopic)">
+            {{ subTopic }}
+        </li>
+      </ul>
   </div>
 </mat-nav-list>

@@ -3,24 +3,32 @@
     "name": "Angular",
     "subTopicList": [
       {
-        "subTopic": "Getting Started",
+        "name": "Getting Started",
         "flashcards": [
-          {
-            "word": "npm",
-            "definition": "Node Package Manager"
-          },
           {
             "word": "Angular",
             "definition": "a framework"
+          },
+          {
+            "word": "npm",
+            "definition": "Node Package Manager"
           }
         ]
       },
       {
-        "subTopic": "Flashcards"
+        "name": "Forms"
       }
     ]
   },
   {
-    "name": "Springboot"
+    "name": "Springboot",
+    "subTopicList": [
+      {
+        "name": "MVC Controller"
+      }
+    ]
+  },
+    {
+    "name": "Java"
   }
 ]

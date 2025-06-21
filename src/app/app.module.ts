@@ -13,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopicService } from './services/TopicService';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // const routes: Routes = [
 //   {path: "*", component: }
@@ -27,6 +28,7 @@ import { TopicService } from './services/TopicService';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatExpansionModule,
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
