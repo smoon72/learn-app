@@ -13,18 +13,27 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopicService } from './services/TopicService';
+import { AngularComponent } from './subtopics/angular/angular.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { RouterModule, Routes } from '@angular/router';
+import { JavaComponent } from './subtopics/java/java.component';
 
-// const routes: Routes = [
-//   {path: "*", component: }
-// ]
+const routes: Routes = [
+  {path: "Angular", component: AngularComponent },
+  {path: "Java", component: JavaComponent },
+  // Need to change this 404
+  {path: "**", component: AngularComponent }
+]
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    MainComponent
+    MainComponent,
+    AngularComponent,
+    JavaComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

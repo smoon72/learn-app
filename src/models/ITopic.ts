@@ -1,7 +1,7 @@
 
 
 export interface ITopic {
-  name:string,
+  name: string,
   subTopicList?: [ 
     {
       name: string,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TopicService } from '../services/TopicService';
 import { ITopic } from 'src/models/ITopic';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,10 +9,10 @@ import { ITopic } from 'src/models/ITopic';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  title: string = "Welcome";
   topicList: ITopic[] = [];
 
   constructor(
+    private router: Router,
     private topicService: TopicService,
   ){}
 
@@ -26,7 +27,7 @@ export class MainComponent {
   }
   
   displayTopic(event: any){
-    this.title = event;
+    this.router.navigate([`/${event}`]);
   }
 
   getSubTopics(topicList: ITopic[]): ITopic[] {
