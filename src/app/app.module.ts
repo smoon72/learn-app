@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainComponent } from './main/main.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TopicService } from './services/TopicService';
 
 // const routes: Routes = [
 //   {path: "*", component: }
@@ -29,9 +31,13 @@ import { MainComponent } from './main/main.component';
     MatToolbarModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClient,
+    TopicService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

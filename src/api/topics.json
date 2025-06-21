@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Angular",
+    "subTopicList": [
+      {
+        "subTopic": "Getting Started",
+        "flashcards": [
+          {
+            "word": "npm",
+            "definition": "Node Package Manager"
+          },
+          {
+            "word": "Angular",
+            "definition": "a framework"
+          }
+        ]
+      },
+      {
+        "subTopic": "Flashcards"
+      }
+    ]
+  },
+  {
+    "name": "Springboot"
+  }
+]

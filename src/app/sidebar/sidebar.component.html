@@ -1,5 +1,5 @@
-<mat-nav-list *ngFor="let topic of topics">
-  <div (click)="navigateMainPage(topic)">
-    {{ topic }}
+<mat-nav-list *ngFor="let topic of topicList">
+  <div (click)="navigateMainPage(topic.name)">
+    {{ topic.name }}
   </div>
 </mat-nav-list>
