@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { tap } from 'rxjs';
 import { ITopic } from 'src/models/ITopic';
-import { TopicService } from '../services/TopicService';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,14 +11,11 @@ export class SidebarComponent {
 
   @Output() eventEmitter = new EventEmitter();
 
-  constructor(
-    private topicService: TopicService
-  ){};
+  constructor(){};
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  navigateMainPage(topic: string): void {
+  navigateMainPage(topic: any): void {
     this.eventEmitter.emit(topic);
   }
 

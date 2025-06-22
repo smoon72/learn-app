@@ -1,7 +1,5 @@
 <mat-nav-list>
-  <div 
-    *ngFor="let topic of sideBarList"
-    (click)="navigateMainPage(topic.name)">
+  <div *ngFor="let topic of sideBarList">
       {{ topic.name }}
       <div>
         <mat-icon>
@@ -11,7 +9,7 @@
       <ul >
         <li 
           *ngFor="let subTopic of topic.subTopicList"
-          (click)="show(subTopic)">
+          (click)="navigateMainPage(subTopic)">
             {{ subTopic }}
         </li>
       </ul>
