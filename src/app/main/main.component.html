@@ -2,12 +2,12 @@
   <!-- position="end", to make it right side -->
   <mat-sidenav opened="true" mode="side" position="start">
     <app-sidebar  
-        [sideBarList]="getSubTopics(topicList)"
-        (eventEmitter)="displayTopic($event)">
+        [sideBarList]="getSubTopics(topicList)"    
+        (eventEmitter)="getFlashcards($event)">
       </app-sidebar>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
+    <app-subtopics [flashcards]="flashcards"></app-subtopics>
   </mat-sidenav-content>
 </mat-sidenav-container>

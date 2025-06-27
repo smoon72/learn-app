@@ -15,25 +15,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopicService } from './services/TopicService';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule, Routes } from '@angular/router';
-import { JavaComponent } from './subtopics/java/java.component';
-import { GettingStartedComponent } from './subtopics/angular/getting-started/getting-started.component';
-import { FormsComponent } from './subtopics/angular/forms/forms.component';
+import { SubtopicsComponent } from './subtopics/subtopics.component';
 
 const routes: Routes = [
-  {path: "Getting Started", component: GettingStartedComponent },
-  {path: "Forms", component: FormsComponent },
-  {path: "Java", component: JavaComponent },
   // Need to change this 404
-  {path: "**", component: GettingStartedComponent }
+  {path: "**", component: SubtopicsComponent }
 ]
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     MainComponent,
-    JavaComponent,
-    GettingStartedComponent,
-    FormsComponent
+    SubtopicsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

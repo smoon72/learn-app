@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormsComponent } from './forms.component';
+import { SubtopicsComponent } from './subtopics.component';
 
-describe('FormsComponent', () => {
-  let component: FormsComponent;
-  let fixture: ComponentFixture<FormsComponent>;
+describe('SubtopicsComponent', () => {
+  let component: SubtopicsComponent;
+  let fixture: ComponentFixture<SubtopicsComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FormsComponent]
+      declarations: [SubtopicsComponent]
     });
-    fixture = TestBed.createComponent(FormsComponent);
+    fixture = TestBed.createComponent(SubtopicsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

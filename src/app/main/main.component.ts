@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MainComponent {
   topicList: ITopic[] = [];
+  flashcards: { word: string; definition: string }[] | undefined;
 
   constructor(
     private router: Router,
@@ -26,8 +27,15 @@ export class MainComponent {
     )
   }
   
-  displayTopic(event: any){
-    this.router.navigate([`/${event}`]);
+  getFlashcards(event: any){
+    // this.router.navigate([`/${event}`]);
+    this.flashcards = this.topicList
+      .find(topic => topic.name === event.topic)
+      ?.subTopicList
+      ?.find(subTopic => subTopic.name === event.subTopic)
+      ?.flashcards;
+      
+    return this.flashcards;
   }
 
   getSubTopics(topicList: ITopic[]): ITopic[] {

@@ -9,7 +9,7 @@
       <ul >
         <li 
           *ngFor="let subTopic of topic.subTopicList"
-          (click)="navigateMainPage(subTopic)">
+          (click)="navigateMainPage(topic, subTopic)">
             {{ subTopic }}
         </li>
       </ul>

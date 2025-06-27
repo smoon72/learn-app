@@ -1,0 +1,4 @@
+run-tests:
+  scripts:
+    - yarn install
+    - yarn test

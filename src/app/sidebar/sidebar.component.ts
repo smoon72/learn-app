@@ -15,8 +15,11 @@ export class SidebarComponent {
 
   ngOnInit() {}
 
-  navigateMainPage(topic: any): void {
-    this.eventEmitter.emit(topic);
+  navigateMainPage(topic: any, subTopic: any): void {
+    this.eventEmitter.emit({
+      topic: topic.name,
+      subTopic: subTopic
+    });
   }
 
   show(subTopic: any) {

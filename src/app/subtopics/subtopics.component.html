@@ -1,0 +1,12 @@
+<div *ngIf="isSelected()">
+  <div *ngFor="let flashcard of flashcards">
+    <table>
+      <tr>
+        <td>{{ flashcard.word }}</td>
+        <td>{{ flashcard.definition }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+
