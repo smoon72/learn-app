@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { TopicService } from '../services/TopicService';
-import { ITopic } from 'src/models/ITopic';
+import { TopicService } from '../../services/TopicService';
+import { ITopic } from 'src/app/models/ITopic';
 import { Router } from '@angular/router';
+import { IFlashcards } from 'src/app/models/IFlashcards';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class MainComponent {
   topicList: ITopic[] = [];
-  flashcards: { word: string; definition: string }[] | undefined;
+  flashcards: IFlashcards[] =[];
 
   constructor(
     private router: Router,
@@ -26,14 +27,14 @@ export class MainComponent {
       }
     )
   }
-  
+
   getFlashcards(event: any){
     // this.router.navigate([`/${event}`]);
     this.flashcards = this.topicList
       .find(topic => topic.name === event.topic)
       ?.subTopicList
       ?.find(subTopic => subTopic.name === event.subTopic)
-      ?.flashcards;
+      ?.flashcards ?? [];
       
     return this.flashcards;
   }

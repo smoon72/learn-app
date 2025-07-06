@@ -6,16 +6,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { MainComponent } from './main/main.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MainComponent } from './components/main/main.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopicService } from './services/TopicService';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule, Routes } from '@angular/router';
-import { SubtopicsComponent } from './subtopics/subtopics.component';
+import { SubtopicsComponent } from './components/subtopics/subtopics.component';
 
 const routes: Routes = [
   // Need to change this 404
@@ -38,6 +39,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatListModule,
     MatIconModule,
+    MatTableModule,
     MatButtonModule,
     HttpClientModule
   ],

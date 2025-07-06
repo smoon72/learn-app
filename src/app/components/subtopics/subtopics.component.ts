@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IFlashcards } from 'src/app/models/IFlashcards';
 
 @Component({
   selector: 'app-subtopics',
@@ -6,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./subtopics.component.scss']
 })
 export class SubtopicsComponent {
-  @Input() flashcards: any[] | undefined = [];
+  @Input() flashcards: IFlashcards[] = [];
 
   private selected!: boolean;
 
@@ -18,5 +19,4 @@ export class SubtopicsComponent {
     return this.selected;
   }
 
-  
 }

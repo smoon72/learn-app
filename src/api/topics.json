@@ -7,11 +7,90 @@
         "flashcards": [
           {
             "word": "Angular",
-            "definition": "a framework"
+            "frequency": "daily",
+            "definition": 
+            "<ol><li>client-side framework (not ran on server)</li><li>Progressive Web Apps (PWAs): <ol><li>web app that can be installed on a device as a standalone</li><li>provide native app like experience (specifically designed for particular platform)</li><li>Offline Support</li></ol></li></ol>"
+          },
+          {
+            "word": "native",
+            "frequency": "daily",
+            "definition": 
+            "Pros:<ol><li>Better Performance</li><li>Tighter Integration</li><li>More features</li></ol> <br> Cons: <ol><li>Platform Lock in</li><li>Higher Development Costs</li><li>Limited cross platform compatibility</li></ol>"
+          },
+          {
+            "word": "Typescript",
+            "frequency": "daily",
+            "definition": "<ol><li>opens source languar and superset of JS</li><li>Transpiles (converts newer code to older)</li></ol>"
           },
           {
             "word": "npm",
-            "definition": "Node Package Manager"
+            "frequency": "daily",
+            "definition": "<ol><li>free, open source registry of JS packages (pre-written code modules)</li><li>CLI for interacting with repository/registry</li><ol>npm install -g @angular/cli<li>installs other package</li><li>generates node_modules (where node installs our packages)</li><li>-g stands for global, -g flag is not specific to Angular</li></ol></ol>"
+          },
+          {
+            "word": "Decorator @()",
+            "frequency": "daily",
+            "definition": "<ol><li>function that adds metadata to class</li></ol>"
+          },
+          {
+            "word": "Directive",
+            "frequency": "daily",
+            "definition": "<ol><li>a way to extend functionality of HTML elements</li><li>can create custom elements, attributes, and classes</li></ol><ol>Component Directive<li></li></ol><ol>Attribute Directive<li>ngClass, ngStyle</li><li>add behavior to an existing element</li><ol>Structural Directive<li>ngIf, ngFor</li><li>change the structure of DOM</li></ol></ol>"
+          },
+          {
+            "word": "Boostrap",
+            "frequency": "daily",
+            "definition": "<ol><li>self starting process that loads and goes</li><li>defines the starting component of app Ex. bootstrap: [AppComponent]</li><li>Typically in main.ts</li></ol>"
+          },
+          {
+            "word": "Module @NgModule({})",
+            "frequency": "daily",
+            "definition": "<ol><li>helps us organize our apps into blocks of functionality</li><li>Components must be declared to only one Angular Module</li><li>Declarations: can declare its own components, directives, and pipes</li><li>Import: modules can import other modules, which means it can use their components, services</li><li>Provides: can provide servies (instances of classes that provide some functionality)</li></ol><ol>Types<li>Root: top level and bootstrapped</li><li>Feature: provides specific feature</li><li>Shared: provides set of shared components, services and other entities</li></ol>"
+          },
+          {
+            "word": "style.css",
+            "frequency": "daily",
+            "definition": "<ol><li>global style sheet</li><li>makes the style <font color=\"red\">This word is red</font> sheet available to all templates</li><li>npm install bootstrap font-awesome -> @import \"bootstrap/dist/css/bootstrap.min.css\"</li></ol>"
+          },
+          {
+            "word": "Data Binding",
+            "frequency": "daily",
+            "definition": "Interpolation <p>-only string </br> -can use back ticks for expressions</p> Proerty Binding <p>- Allows other types other than string</p> Two way binding [()] <p>-way to bind a property of a component to a property of an element in the template</p>"
+          },
+          {
+            "word": "Pipes",
+            "frequency": "daily",
+            "definition": "<p></p>"
+          },
+          {
+            "word": "Lifecycle Hooks",
+            "frequency": "daily",
+            "definition": "<p>OnInit: Perform component initialization, retrieve data <br> OnChanges: Perform action after change to input properties <br> OnDestroy:  Peform cleanup</p>"
+          },
+          {
+            "word": "Nested Components",
+            "frequency": "daily",
+            "definition": "<p>Stil needs to be declared in module</p> <p>@Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number</p> @Output <p>event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)'</p>"
+          },
+          {
+            "word": "Servive",
+            "frequency": "daily",
+            "definition": "<p>-a class with focused purpose <br> -independent from components <br> -components can create an instance of a service but local and can't share data so instead register the service with Angular, then it creates a Singleton (single instance)</p> Injector<p>-maintains a container of created service instances <br> -define the service as a dependency</p> Dependency Injection <p>-coding pattern in which a class receives the instances of object it needs (dependency) from an external source than creating itself</p> Registering a Service <p>Root Injector <br> -service is available throught the application <br> @Injectable({ providedIn: 'root'}) <br> -then can access service from any component, no need for modules (old way) <br> @NgModule({ imports: [], declarations:[], bootstrap: [], prodviders: [ProdviderService]})</p> Injecting A Service <p>constructor(private productService: ProductService) <br> -constructor is executed when an instance of class is created</p> Tips <p>-Clear Name <br> -PascalCasing <br>- Append 'Service' to the name <br>-export keyword <br>-Use Injectable</p>"
+          },
+          {
+            "word": "RxJS",
+            "frequency": "daily",
+            "definition": "<p>-library for composing data using observable sequences</p> <span class=\"test\">Observable</span> <p>-nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete</p>"
+          },
+          {
+            "word": "Router",
+            "frequency": "daily",
+            "definition": "<p>import like http module <br>-define a base element in index.html</p> {path: products/:id, component: ProductDetailComponent} <p>-:id is a route parameter <br>-** denotes a wildcard path <br>-no leading slashes <br>-first match stragery so order matters <br>-Add to RouterModule.forRoot({}) in app.module.ts</p>"
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": "<p></p>"
           }
         ]
       },

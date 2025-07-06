@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ITopic } from 'src/models/ITopic';
+import { ITopic } from 'src/app/models/ITopic';
 
 @Component({
   selector: 'app-sidebar',
