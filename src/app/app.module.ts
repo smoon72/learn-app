@@ -20,7 +20,7 @@ import { SubtopicsComponent } from './components/subtopics/subtopics.component';
 
 const routes: Routes = [
   // Need to change this 404
-  {path: "**", component: SubtopicsComponent }
+  {path: "**", component: MainComponent }
 ]
 @NgModule({
   declarations: [

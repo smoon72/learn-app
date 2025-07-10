@@ -1,11 +1,11 @@
-import { IFlashcards } from "./IFlashcards"
-export interface ITopic {
+import { Flashcards } from "./Flashcards"
+export interface Topic {
   name: string,
   subTopicList?: [ 
     {
       name: string,
       flashcards?: [
-        IFlashcards
+        Flashcards
       ]
     }
   ],

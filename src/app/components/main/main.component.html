@@ -1,13 +1,13 @@
-<mat-sidenav-container class="sidenav-container">
-  <!-- position="end", to make it right side -->
-  <mat-sidenav opened="true" mode="side" position="start">
-    <app-sidebar  
-        [sideBarList]="getSubTopics(topicList)"    
-        (eventEmitter)="getFlashcards($event)">
-      </app-sidebar>
-  </mat-sidenav>
 
-  <mat-sidenav-content>
-    <app-subtopics [flashcards]="flashcards"></app-subtopics>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<div class="main-page">
+  <app-sidebar 
+    class="sidebar"
+    [sideBarList]="getSubTopics(topicList)"    
+    (eventEmitter)="getFlashcards($event)">
+  </app-sidebar>
+
+  <app-subtopics 
+    class="subtopics"
+    [flashcards]="flashcards">
+  </app-subtopics>
+</div>

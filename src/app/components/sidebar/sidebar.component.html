@@ -1,11 +1,9 @@
-<mat-nav-list>
-  <div *ngFor="let topic of sideBarList">
+<div>
+  <h3>Topics</h3>
+</div>
+
+<div *ngFor="let topic of sideBarList">
       {{ topic.name }}
-      <div>
-        <mat-icon>
-          arrow_drop_down
-        </mat-icon>
-      </div>
       <ul >
         <li 
           *ngFor="let subTopic of topic.subTopicList"
@@ -14,4 +12,3 @@
         </li>
       </ul>
   </div>
-</mat-nav-list>

@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { IFlashcards } from 'src/app/models/IFlashcards';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { Flashcards } from 'src/app/models/Flashcards';
+
 
 @Component({
   selector: 'app-subtopics',
@@ -7,16 +8,33 @@ import { IFlashcards } from 'src/app/models/IFlashcards';
   styleUrls: ['./subtopics.component.scss']
 })
 export class SubtopicsComponent {
-  @Input() flashcards: IFlashcards[] = [];
+  @Input() flashcards: Flashcards[] = [];
+
+  pristineFlashcards: Flashcards[] = [];
 
   private selected!: boolean;
 
   ngOnInit() {
     this.selected = true;
+    // Might have to use await for this one
+    this.pristineFlashcards = [...this.flashcards];
   }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if (changes['flashcards'] && changes['flashcards'].firstChange()) {
+  //     this.pristineFlashcards = changes['flashcards'].currentValue;
+  //   }
+  // }
 
   public isSelected(): boolean {
     return this.selected;
   }
+  randomize() {
+    this.flashcards.sort(() => Math.random() - 0.5);
+  }
 
+  getPristine() {
+    console.log(this.pristineFlashcards);
+    this.flashcards = this.pristineFlashcards;
+  }
 }

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { TopicService } from '../../services/TopicService';
-import { ITopic } from 'src/app/models/ITopic';
+import { Topic } from 'src/app/models/Topic';
 import { Router } from '@angular/router';
-import { IFlashcards } from 'src/app/models/IFlashcards';
+import { Flashcards } from 'src/app/models/Flashcards';
 
 @Component({
   selector: 'app-main',
@@ -10,8 +10,8 @@ import { IFlashcards } from 'src/app/models/IFlashcards';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent {
-  topicList: ITopic[] = [];
-  flashcards: IFlashcards[] =[];
+  topicList: Topic[] = [];
+  flashcards: Flashcards[] =[];
 
   constructor(
     private router: Router,
@@ -35,12 +35,12 @@ export class MainComponent {
       ?.subTopicList
       ?.find(subTopic => subTopic.name === event.subTopic)
       ?.flashcards ?? [];
-      
+
     return this.flashcards;
   }
 
-  getSubTopics(topicList: ITopic[]): ITopic[] {
-    let sideBarList: ITopic[] = [];
+  getSubTopics(topicList: Topic[]): Topic[] {
+    let sideBarList: Topic[] = [];
 
     topicList.forEach(topic => {
       let subTopic: any = {};

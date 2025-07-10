@@ -35,7 +35,7 @@
           {
             "word": "Directive",
             "frequency": "daily",
-            "definition": "<ol><li>a way to extend functionality of HTML elements</li><li>can create custom elements, attributes, and classes</li></ol><ol>Component Directive<li></li></ol><ol>Attribute Directive<li>ngClass, ngStyle</li><li>add behavior to an existing element</li><ol>Structural Directive<li>ngIf, ngFor</li><li>change the structure of DOM</li></ol></ol>"
+            "definition": "-a way to extend functionality of HTML elements <br>-can create custom elements, attributes, and classes <br> Component Directive <br>-something that has a template <br> Attribute Directive <br>-ngClass, ngStyle <br>-add behavior to an existing element <br> Structural Directive <br>-ngIf, ngFor <br>-change the structure of DOM"
           },
           {
             "word": "Boostrap",
@@ -73,7 +73,7 @@
             "definition": "<p>Stil needs to be declared in module</p> <p>@Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number</p> @Output <p>event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)'</p>"
           },
           {
-            "word": "Servive",
+            "word": "Service",
             "frequency": "daily",
             "definition": "<p>-a class with focused purpose <br> -independent from components <br> -components can create an instance of a service but local and can't share data so instead register the service with Angular, then it creates a Singleton (single instance)</p> Injector<p>-maintains a container of created service instances <br> -define the service as a dependency</p> Dependency Injection <p>-coding pattern in which a class receives the instances of object it needs (dependency) from an external source than creating itself</p> Registering a Service <p>Root Injector <br> -service is available throught the application <br> @Injectable({ providedIn: 'root'}) <br> -then can access service from any component, no need for modules (old way) <br> @NgModule({ imports: [], declarations:[], bootstrap: [], prodviders: [ProdviderService]})</p> Injecting A Service <p>constructor(private productService: ProductService) <br> -constructor is executed when an instance of class is created</p> Tips <p>-Clear Name <br> -PascalCasing <br>- Append 'Service' to the name <br>-export keyword <br>-Use Injectable</p>"
           },
@@ -107,7 +107,113 @@
       }
     ]
   },
-    {
-    "name": "Java"
+  {
+    "name": "Java",
+    "subTopicList": [
+      {
+        "name": "Maven",
+        "flashcards": [
+          {
+            "word": "Maven",
+            "frequency": "daily",
+            "definition": "<p>-tool to build source code (java, kotlin) <br> -produce an artifact (jar/zip file) <br> -uses pom.xml</p>"
+          },
+          {
+            "word": "Installation",
+            "frequency": "daily",
+            "definition": "-If not using a package manager, set the enviromnent variable <br> -Env Variable for your system -> Edit Path -> New -> Paste Path to bin -> mvn -v"
+          },
+          {
+            "word": "maven wrapper",
+            "frequency": "daily",
+            "definition": "-allows you to run maven without having maven installed BUT must have maven to install the wrapper <br> -mvn:wrapper wrapper (to install wrapper) <br>-./mwnw to use the command? <br> -mvnw.cmd (windows) & mvnw (linux/macOS) "
+          },
+          {
+            "word": "groupId, artifactId, version",
+            "frequency": "daily",
+            "definition": "groupdId and artifactId are used to uniquely identify your project <br> groupdId <br> -takes the reverse of the domain name (package name) <br> artifactId <br> -projectId <br> versions <br> -SNAPSHOT means WIP (not a release version) <br>-RC "
+          },
+          {
+            "word": "properties",
+            "frequency": "daily",
+            "definition": "specify the version here"
+          },
+          {
+            "word": "plugins",
+            "frequency": "daily",
+            "definition": "-can be used for quality checking or to deploy your code?"
+          },
+          {
+            "word": "dependencies (scope)",
+            "frequency": "daily",
+            "definition": "scope <br> -define the visibility and lifecycle of a dependency <br>-determines when the dependency is included in build process. Compilation, Packaging (JAR), Runtime <br> compile <br>-default <br>-means project needs this dependency for compile, test, deploy/runtime? <br> provided <br>-artifact is provided through all build cycle expect packaging <br>-good idea to not iclude if it will provided by container/environment <br> Runtime <br>-included in  runtime, packaging (opposite of provided) <br> test <br>-only available in the test classpath <br>-not included in runtime or compile classpath <br> system <br>-not recommended <br>-explicitly provided the JAR file on your system (defeats the purpose of Maven) <br>-only be used when not avilable in Maven repo <br>-compilation, runtime but not in package"
+          },
+          {
+            "word": "mvn commands",
+            "frequency": "daily",
+            "definition": "clean <br>-deletes target folder <br> compile <br>-compiles the src/main in target/classes <br> test <br>-runs mvn compile (the code must compile before running tests)then runs src/tests <br> package <br>-compiles, tests (-DskipTests) <br>-packages your code into a jar inside target (so other people can use it) <br> install <br>-includes package installs jar file into m2 (local maven repository)"
+          },
+          {
+            "word": "maven repository",
+            "frequency": "daily",
+            "definition": "-teams can have their own maven repository <br>-when maven tries to download dependency it tries to ask the remotes (global repo) and the downloads it into m2 so it can be reused"
+          },
+          {
+            "word": "parent pom aka (BOM)",
+            "frequency": "daily",
+            "definition": "-packaging is of type pom <br>-"
+          },
+          {
+            "word": "Misc",
+            "frequency": "daily",
+            "definition": "mvn validate <br> -validates the project <br> packaging <br> -how we distribute our application (jar, war, ...) <br> src/main/resources <br>-find your application properties"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Money",
+    "subTopicList": [
+      {
+        "name": "Investing",
+        "flashcards": [
+          {
+            "word": "Fund",
+            "frequency": "daily",
+            "definition": 
+            "-group of people pool their money to buy assets (stock, bond, real estate)"
+          },
+                    {
+            "word": "Index Funds",
+            "frequency": "daily",
+            "definition": 
+            "-passively managed(follows a index) -copies a list (aka index/scorecard) of compaines <br>-doesn't try to pick winning stocks <br>-small fees (0.02-0.20% -> make $1000 Fees: 0.20cents-$2) <br>-Vanguard, Blackrock, Fidelity -<br>low risk (money is spread out between companies) <br>-priced once after market closes (NAV = (Total Assets-Expenses)/shares) "
+          },
+                    {
+            "word": "Mutual Funds",
+            "frequency": "daily",
+            "definition": 
+            "-actively managed (professional team tries to beat the market) -Higher Fees (Common Expense ratio: 0.5-1.5% -hard time beating market but believed in them or want assets not available in index <br>-Vanguard, Fidelity, JP Morgan (offers a wiide range of funds (passively and actively) <br>-Has a CUT OFF time like index"
+          },
+                    {
+            "word": "Hedge Funds",
+            "frequency": "daily",
+            "definition": 
+            "-name comes from hedging risks -aggresive and complex strategy (short selling, leverage, dirvatives) -must be a accredited investor <br>-private investment funds that pool money from weahlthy -2 and 20 model (2% percentage managment fees, 20% on proficts)"
+          },
+                    {
+            "word": "ETFs",
+            "frequency": "daily",
+            "definition": 
+            "exchange traded funds <br>-mix between index funds and stocks <br>-Low feeds (0.03-0.75%) <br>-passively managed (usually trackin iindex)"
+          }
+        ]
+      },
+      {
+        "name": "Retirement",
+        "flashcards": []
+      }
+    ]
   }
 ]

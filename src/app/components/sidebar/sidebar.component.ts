@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ITopic } from 'src/app/models/ITopic';
+import { Topic } from 'src/app/models/Topic';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,7 +7,7 @@ import { ITopic } from 'src/app/models/ITopic';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  @Input() sideBarList!: ITopic[];
+  @Input() sideBarList!: Topic[];
 
   @Output() eventEmitter = new EventEmitter();
 

@@ -1,19 +1,10 @@
-<!-- do I need *ngIf="isSelected()" -->
-
-<table mat-table [dataSource]="flashcards" class="mat-elevation-z8">
-  <ng-container matColumnDef="word">
-    <!-- * means template reference variable -->
-    <th mat-header-cell *matHeaderCellDef>Word</th>
-    <td *matCellDef="let element" [innerHtml]="element.word"
-      class="word"
-    ></td>
-  </ng-container>
-  
-  <ng-container matColumnDef="definition">
-    <th mat-header-cell *matHeaderCellDef>Definition</th>
-    <td mat-cell *matCellDef="let element" [innerHtml]="element.definition"></td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="['word', 'definition']"></tr>
-  <tr mat-row *matRowDef="let row; columns: ['word', 'definition']"></tr>
+<div>
+  <button (click)="getPristine()">Pristine</button>
+  <button (click)="randomize()">Randomize</button>
+</div>
+<table>
+  <tr *ngFor="let flashcard of flashcards; let i = index">
+    <td class="word">{{ flashcards.length - i }} - {{ flashcard.word}}</td>
+    <td [innerHTML]="flashcard.definition"></td>
+  </tr>
 </table>

@@ -1,13 +1,11 @@
-.sidenav-container {
-  height: 100%;
-}
-
-mat-sidenav {
-  width: 250px;
-}
-
-mat-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+.main-page {
+  display: flex;
+  .sidebar {
+    // flex-basis: 20%;
+    flex-grow: 2;
+  }
+  .subtopics {
+    // flex-basis: 80%;
+    flex-grow: 8;
+  }
 }

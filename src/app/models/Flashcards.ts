@@ -1,8 +1,8 @@
 import { Frequency } from "./Frequency";
 
 
-export interface IFlashcards {
-  words?: string,
+export interface Flashcards {
+  word?: string,
   definition?:string,
   // enum here later
   frequency: string

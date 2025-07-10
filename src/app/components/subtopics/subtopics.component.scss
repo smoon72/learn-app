@@ -3,6 +3,11 @@
   vertical-align: top
 }
 
+td {
+ border: 1px solid;
+  border-image: linear-gradient(to bottom, #ccc, #fff) 1;
+}
+
 ::ng-deep span.test {
   color: #FFA500;
 }
