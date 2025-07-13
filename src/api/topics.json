@@ -20,7 +20,7 @@
           {
             "word": "Typescript",
             "frequency": "daily",
-            "definition": "<ol><li>opens source languar and superset of JS</li><li>Transpiles (converts newer code to older)</li></ol>"
+            "definition": "-opens source language and superset of JS <br>-Transpiles (converts newer code to older)"
           },
           {
             "word": "npm",
@@ -30,12 +30,12 @@
           {
             "word": "Decorator @()",
             "frequency": "daily",
-            "definition": "<ol><li>function that adds metadata to class</li></ol>"
+            "definition": "-function that adds metadata to class"
           },
           {
             "word": "Directive",
             "frequency": "daily",
-            "definition": "-a way to extend functionality of HTML elements <br>-can create custom elements, attributes, and classes <br> Component Directive <br>-something that has a template <br> Attribute Directive <br>-ngClass, ngStyle <br>-add behavior to an existing element <br> Structural Directive <br>-ngIf, ngFor <br>-change the structure of DOM"
+            "definition": "-a way to extend functionality of HTML elements <br>-can create custom elements, attributes, and classes <br><br> <span class=\"test\">Component Directive</span>  <br>-something that has a template <br><br> <span class=\"test\">Attribute Directive</span> <br>-ngClass, ngStyle <br>-add behavior to an existing element <br><br> <span class=\"test\">Structural Directive</span> <br>-ngIf, ngFor <br>-change the structure of DOM"
           },
           {
             "word": "Boostrap",
@@ -45,7 +45,7 @@
           {
             "word": "Module @NgModule({})",
             "frequency": "daily",
-            "definition": "<ol><li>helps us organize our apps into blocks of functionality</li><li>Components must be declared to only one Angular Module</li><li>Declarations: can declare its own components, directives, and pipes</li><li>Import: modules can import other modules, which means it can use their components, services</li><li>Provides: can provide servies (instances of classes that provide some functionality)</li></ol><ol>Types<li>Root: top level and bootstrapped</li><li>Feature: provides specific feature</li><li>Shared: provides set of shared components, services and other entities</li></ol>"
+            "definition": "-helps us organize our apps into blocks of functionality <br>-Components must be declared to only one Angular Module <br>-Declarations: can declare its own components, directives, and pipes <br>-Import: modules can import other modules, which means it can use their components, services <br>-Provides: can provide servies (instances of classes that provide some functionality) <br><br>-Types <br>-Root: top level and bootstrapped <br>-Feature: provides specific feature <br>-Shared: provides set of shared components, services and other entities"
           },
           {
             "word": "style.css",
@@ -55,47 +55,124 @@
           {
             "word": "Data Binding",
             "frequency": "daily",
-            "definition": "Interpolation <p>-only string </br> -can use back ticks for expressions</p> Proerty Binding <p>- Allows other types other than string</p> Two way binding [()] <p>-way to bind a property of a component to a property of an element in the template</p>"
+            "definition": "<span class=\"test\">Interpolation</span> -only string </br> -can use back ticks for expressions </br></br> <span class=\"test\">Property Binding</span> </br>-Allows other types other than string </br></br> <span class=\"test\">Two way binding [()]</span> </br>-way to bind a property of a component to a property of an element in the template"
           },
           {
             "word": "Pipes",
             "frequency": "daily",
-            "definition": "<p></p>"
+            "definition": " "
           },
           {
             "word": "Lifecycle Hooks",
             "frequency": "daily",
-            "definition": "<p>OnInit: Perform component initialization, retrieve data <br> OnChanges: Perform action after change to input properties <br> OnDestroy:  Peform cleanup</p>"
+            "definition": "OnInit: Perform component initialization, retrieve data <br> OnChanges: Perform action after change to input properties <br> OnDestroy:  Peform cleanup "
           },
           {
             "word": "Nested Components",
             "frequency": "daily",
-            "definition": "<p>Stil needs to be declared in module</p> <p>@Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number</p> @Output <p>event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)'</p>"
+            "definition": "Stil needs to be declared in module  @Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number  @Output event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)' "
           },
           {
             "word": "Service",
             "frequency": "daily",
-            "definition": "<p>-a class with focused purpose <br> -independent from components <br> -components can create an instance of a service but local and can't share data so instead register the service with Angular, then it creates a Singleton (single instance)</p> Injector<p>-maintains a container of created service instances <br> -define the service as a dependency</p> Dependency Injection <p>-coding pattern in which a class receives the instances of object it needs (dependency) from an external source than creating itself</p> Registering a Service <p>Root Injector <br> -service is available throught the application <br> @Injectable({ providedIn: 'root'}) <br> -then can access service from any component, no need for modules (old way) <br> @NgModule({ imports: [], declarations:[], bootstrap: [], prodviders: [ProdviderService]})</p> Injecting A Service <p>constructor(private productService: ProductService) <br> -constructor is executed when an instance of class is created</p> Tips <p>-Clear Name <br> -PascalCasing <br>- Append 'Service' to the name <br>-export keyword <br>-Use Injectable</p>"
+            "definition": "-a class with focused purpose <br>-independent from components <br>-components can create an instance of a service but local and can't share data so instead register the service with Angular, then it creates a Singleton (single instance) <br><br> <span class=\"test\">Injector</span> <br>-maintains a container of created service instances <br>-define the service as a dependency <br><br> <span class=\"test\">Dependency Injection</span> -coding pattern in which a class receives the instances of object it needs (dependency) from an external source than creating itself <br><br> <span class=\"test\">Registering a Service</span> Root Injector <br>-service is available throught the application <br> @Injectable({ providedIn: 'root'}) <br>-then can access service from any component, no need for modules (old way) <br> @NgModule({ imports: [], declarations:[], bootstrap: [], prodviders: [ProdviderService]}) <br><br>  <span class=\"test\">Injecting a Service</span> <br>-constructor(private productService: ProductService) <br> -constructor is executed when an instance of class is created <br><br> <span class=\"test\">Tips</span> <br>-Clear Name <br> -PascalCasing <br>- Append 'Service' to the name <br>-export keyword <br>-Use Injectable "
           },
           {
             "word": "RxJS",
             "frequency": "daily",
-            "definition": "<p>-library for composing data using observable sequences</p> <span class=\"test\">Observable</span> <p>-nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete</p>"
+            "definition": "-library for composing data using observable sequences  <span class=\"test\">Observable</span> -nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete "
           },
           {
             "word": "Router",
             "frequency": "daily",
-            "definition": "<p>import like http module <br>-define a base element in index.html</p> {path: products/:id, component: ProductDetailComponent} <p>-:id is a route parameter <br>-** denotes a wildcard path <br>-no leading slashes <br>-first match stragery so order matters <br>-Add to RouterModule.forRoot({}) in app.module.ts</p>"
+            "definition": "import like http module <br>-define a base element in index.html  {path: products/:id, component: ProductDetailComponent} -:id is a route parameter <br>-** denotes a wildcard path <br>-no leading slashes <br>-first match stragery so order matters <br>-Add to RouterModule.forRoot({}) in app.module.ts "
           },
           {
             "word": "",
             "frequency": "daily",
-            "definition": "<p></p>"
+            "definition": " "
           }
         ]
       },
       {
         "name": "Forms"
+      },
+      {
+        "name": "Angular Unit Testing",
+        "flashcards": [
+          {
+            "word": "Types of Testing",
+            "frequency": "daily",
+            "definition": 
+            "<span class=\"test\">Unit</span>  <br>-testing individual methods (are functions that are to a class) and  <br>-cheap, fast <br><br> <span class=\"test\">Integration</span>  <br>-how different modules or services work together <br><br> <span class=\"test\">Functional</span>  <br>-only verify the output of an action, do not check the intermediate states of the systems <br><br> <span class=\"test\">E2E</span>  <br>-replicate a user's behavior in a complete app environment <br>-expensive, fragile, and hard to maintain when automated (Cypress)"
+          },
+          {
+              "word": "Mocking (& Types)",
+              "frequency": "daily",
+              "definition": 
+              "-provides the ability to isolate and test code without interference of dependencies, network issues (don't want to make HTTP calls) <br> <span class=\"test\">Dummies</span> <br>-Objects passed around but not used. Mostly for parameter slot <br><br><span class=\"test\">Fakes</span> <br>-actual implementation but short one (won't work in production) <br>-in memory database instead of real db <br><br> <span class=\"test\">Stubs</span> <br>-object provides canned answers <br><br> <span class=\"test\">Spies</span> <br>-object that records what methods and what parameters were called with <br>-Most mocking libraries has object that is a mix between stub and spy <br><br> <span class=\"test\">Mocks</span> <br>-objects with pre-programmed with expectations (hardest to test) <br>-object lets you tell it exactly what calls you expect to have against it then tells you whether or not those calls happened"
+          },
+          {
+              "word": "Jasmine + Karma vs Jest ",
+              "frequency": "daily",
+              "definition": 
+              "<span class=\"topic\">Jasmine</span> <br>-testing framework in Node.js <br>-provides funtions like (describe, it, expect) <br><br> <span class=\"topic\">Karma</span> <br>-to run a web app you need HTML file and a browser (Chrome, headless Chrome aka without GUI) <br>-helps run test on every code change in a live browser <br><br> <span class=\"topic\">Jest</span> <br>-same functions but key difference is jest works without a browser because it uses jsdom library to emulate all DOM interactions in Node.js <br>-multithreading (karma is getting some) aka can run each test file in parallel <br>-by default number of threads is equal to CPU cores but can adjust"
+          },
+          {
+              "word": "Types of Unit Tests in Angular",
+              "frequency": "daily",
+              "definition": 
+              "<span class=\"test\">Isolated</span> <br>-single piece, construct by using new keyword (new HeroComponent, I think)<br> <span class=\"test\">Integration</span> <br>-uses testbed <br>-don't always have to test the template in your test <br><span class=\"test\">Shallow</span>: single component <br><span class=\"test\">Deep</span>: test children of component"
+          },
+          {
+              "word": "DAMP vs DRY",
+              "frequency": "daily",
+              "definition": 
+              "<span class=\"test\">Descriptive and Meaningful Phrases</span> <br>-repeat yourself if necessary"
+          },
+          {
+              "word": "Testbed",
+              "frequency": "daily",
+              "definition": 
+              "-allows us to test component and its html <br>-before -> let: heroComponent = new HeroComponent(mockHeroService); but only was testing components <br><br> <span class=\"topic\">Steps</span> <br> <span class=\"test\">Module</span> <br>-Testbed.configureTestbedModule <br>-creating another module (add the necessary services, components) <br><br> <span class=\"test\">Fixture</span> <br>-let fixture: ComponentFixture<HeroComponent> = Testbed.createComponent(HeroComponent);"
+          },
+          {
+              "word": "Fixture",
+              "frequency": "daily",
+              "definition": 
+              "-wrapper for a component like mwnw <br>-ComponentFixture: object that represents a component and its DOM <br>-fixture.ComponentInstance //contains the component itself <br>-fixture.detectChanges() causes the lifecycle events to run, can call ngOnInit but we want Angular to handle these things? <br>-remember the span tag caused an error because hero was null, need detectChanges"
+          },
+          {
+              "word": "NO_ERRORS_SCHEMA",
+              "frequency": "daily",
+              "definition": 
+              "-Tells Angular don't try to validate the template for component or schema <br>-set in Testbed module in schemas: []"
+          },
+          {
+              "word": "nativeElement",
+              "frequency": "daily",
+              "definition": 
+              "-gets a handle to DOM element <br>-exposes the regular old browser's DOM API"
+          },
+          {
+              "word": "debugElement",
+              "frequency": "daily",
+              "definition": 
+              "-a wrapper around the actual DOM Node (similar to fixture) that has different set of function that is similar to nE <br>-can access router link directive, also know which component it belongs to <br> <br> Compare to nE: <br>-fixture.debugElement.query(By.css('a')).nativeElement.textContent vs fixture.nativeElement.querySelector('a').textContent"
+          },
+          {
+              "word": "Mocking Injected Service",
+              "frequency": "daily",
+              "definition": 
+              "-don't want to make real HTTP calls and don't want to test two units at the same time <br>-uses long handed way in module providers: [ { provide: HeroService, useValue: mockHeroService}]"
+          },
+          {
+              "word": "",
+              "frequency": "daily",
+              "definition": 
+              ""
+          }
+        ]
       }
     ]
   },
@@ -116,7 +193,7 @@
           {
             "word": "Maven",
             "frequency": "daily",
-            "definition": "<p>-tool to build source code (java, kotlin) <br> -produce an artifact (jar/zip file) <br> -uses pom.xml</p>"
+            "definition": "-tool to build source code (java, kotlin) <br> -produce an artifact (jar/zip file) <br> -uses pom.xml "
           },
           {
             "word": "Installation",
@@ -188,19 +265,19 @@
             "word": "Index Funds",
             "frequency": "daily",
             "definition": 
-            "-passively managed(follows a index) -copies a list (aka index/scorecard) of compaines <br>-doesn't try to pick winning stocks <br>-small fees (0.02-0.20% -> make $1000 Fees: 0.20cents-$2) <br>-Vanguard, Blackrock, Fidelity -<br>low risk (money is spread out between companies) <br>-priced once after market closes (NAV = (Total Assets-Expenses)/shares) "
+            "-passively managed(follows a index) <br>-copies a list (aka index/scorecard) of compaines <br>-doesn't try to pick winning stocks <br>-small fees (0.02-0.20% -> make $1000 Fees: 0.20cents-$2) <br>-Vanguard, Blackrock, Fidelity -<br>low risk (money is spread out between companies) <br>-priced once after market closes (NAV = (Total Assets-Expenses)/shares) "
           },
                     {
             "word": "Mutual Funds",
             "frequency": "daily",
             "definition": 
-            "-actively managed (professional team tries to beat the market) -Higher Fees (Common Expense ratio: 0.5-1.5% -hard time beating market but believed in them or want assets not available in index <br>-Vanguard, Fidelity, JP Morgan (offers a wiide range of funds (passively and actively) <br>-Has a CUT OFF time like index"
+            "-actively managed (professional team tries to beat the market) <br>-Higher Fees (Common Expense ratio: 0.5-1.5% <br>-hard time beating market but believed in them or want assets not available in index <br>-Vanguard, Fidelity, JP Morgan (offers a wiide range of funds (passively and actively) <br>-Has a CUT OFF time like index"
           },
                     {
             "word": "Hedge Funds",
             "frequency": "daily",
             "definition": 
-            "-name comes from hedging risks -aggresive and complex strategy (short selling, leverage, dirvatives) -must be a accredited investor <br>-private investment funds that pool money from weahlthy -2 and 20 model (2% percentage managment fees, 20% on proficts)"
+            "-name comes from hedging risks <br>-aggresive and complex strategy (short selling, leverage, dirvatives) <br>-must be a accredited investor <br>-private investment funds that pool money from weahlthy -2 and 20 model (2% percentage managment fees, 20% on proficts)"
           },
                     {
             "word": "ETFs",

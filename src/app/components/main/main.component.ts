@@ -26,6 +26,26 @@ export class MainComponent {
         this.getSubTopics(this.topicList);
       }
     )
+    this.getAllFlashcards()
+  }
+
+  getAllFlashcards(): void {
+    let allTopics: Topic[];
+    let tempFlashCards: Flashcards[]= [];
+
+    this.topicService.getAllFlashCards().subscribe(
+      data => {
+        allTopics = data
+        allTopics.forEach(t => {
+          t.subTopicList?.forEach(subTopic => {
+            if (subTopic.flashcards) {
+              tempFlashCards = [...subTopic.flashcards, ...tempFlashCards]
+            }
+          })
+        }
+      );
+      this.flashcards = tempFlashCards;
+    })
   }
 
   getFlashcards(event: any){
