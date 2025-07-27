@@ -55,7 +55,7 @@
           {
             "word": "Data Binding",
             "frequency": "daily",
-            "definition": "<span class=\"test\">Interpolation</span> -only string </br> -can use back ticks for expressions </br></br> <span class=\"test\">Property Binding</span> </br>-Allows other types other than string </br></br> <span class=\"test\">Two way binding [()]</span> </br>-way to bind a property of a component to a property of an element in the template"
+            "definition": "<span class=\"test\">Interpolation</span> <br>-only string </br> -can use back ticks for expressions </br></br> <span class=\"test\">Property Binding</span> </br>-Allows other types other than string </br></br> <span class=\"test\">Two way binding [()]</span> </br>-way to bind a property of a component to a property of an element in the template"
           },
           {
             "word": "Pipes",
@@ -68,9 +68,9 @@
             "definition": "OnInit: Perform component initialization, retrieve data <br> OnChanges: Perform action after change to input properties <br> OnDestroy:  Peform cleanup "
           },
           {
-            "word": "Nested Components",
+            "word": "Nested Components", 
             "frequency": "daily",
-            "definition": "Stil needs to be declared in module  @Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number  @Output event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)' "
+            "definition": "Stil needs to be declared in module <br> @Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number <br><br>  @Output event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)' "
           },
           {
             "word": "Service",
@@ -80,7 +80,7 @@
           {
             "word": "RxJS",
             "frequency": "daily",
-            "definition": "-library for composing data using observable sequences  <span class=\"test\">Observable</span> -nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete "
+            "definition": "-library for composing data using observable sequences <br> <span class=\"test\">Observable</span> -nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete "
           },
           {
             "word": "Router",
@@ -95,7 +95,49 @@
         ]
       },
       {
-        "name": "Forms"
+        "name": "Forms",
+        "flashcards": [
+          {
+            "word": "States",
+            "frequency": "daily",
+            "definition": "Value Changed <br>-Pristine/Dirty <br><br> Validty <br>Valid/Errors <br><br> Visited <br>touched/untouched"
+          },
+          {
+            "word": "Form Building Blocks",
+            "frequency": "daily",
+            "definition": "<span class=\"test\">FormControl</span> <br>-tracks value and state of individual input elements <br> <span class=\"test\">FormGroup</span> <br>-tracks a group of FormControl <br>-can be nested <br> <span class=\"test\">FormModel</span> <br>-data structure that represents HTML form, not to be confused with data model <br>-retains form state, value, controls"
+          },
+          {
+            "word": "Template vs Reactive",
+            "frequency": "daily",
+            "definition": "<span class=\"topic\">Template</span> <br>-Angular generates Form model <br> <span class=\"topic\">Reactive</span> <br>-properties for data binding"
+          },
+          {
+            "word": "Directives",
+            "frequency": "daily",
+            "definition": "<span class=\"topic\">Template</span> <br>-import FormModule <br>-ngForm (form model), ngModel (two way binding and state), ngModelGroup (grouping elements within the form) <br>-Angular assigns ngForm directive to the form element inside template <br>-use TRV (#signUpForm=\"ngForm\") to access form model state information inside template <br><br> <span class=\"test\">Input</span> <br>-Angular creates formControl for [(ngModel)]=\"customer.firstName\" inside input element <br>-use the name=\"firstName\" as the key <br>-access state by TRV #firstNameVar=\"ngModel\". Ex: [ngClass]=\"{'is-invalid': firstNameVar.touched etc...  }\" <br><br> <span class=\"topic\">Reactive</span> <br>-import ReactiveFormsModule <br>-formGroup/Control/ControlName/GroupName <br>-doesn't use two way binding and TRV"
+          },
+                    {
+            "word": "",
+            "frequency": "daily",
+            "definition": ""
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": ""
+          },
+                    {
+            "word": "",
+            "frequency": "daily",
+            "definition": ""
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": ""
+          }
+        ]
       },
       {
         "name": "Angular Unit Testing",
@@ -165,6 +207,24 @@
               "frequency": "daily",
               "definition": 
               "-don't want to make real HTTP calls and don't want to test two units at the same time <br>-uses long handed way in module providers: [ { provide: HeroService, useValue: mockHeroService}]"
+          },
+          {
+              "word": "Finding Elements by Device",
+              "frequency": "daily",
+              "definition": 
+              ""
+          },
+          {
+              "word": "Setting Up Integration Testing of Services and HTTP mock and methods",
+              "frequency": "daily",
+              "definition": 
+              "-Services doesn't have HTML but mostly have HTTP (Angular has a special HTTP mock service) <br>-import HttpClientTestingModule and inject HttpTestingController from @angular/common/http/testing <br><br> <span class=\"topic\">Two Ways on Injecting</span> <br>1: httpTestingController = Testbed.inject(HttpTestingController); <br>2: use inject( [HeroService], (service:HeroService) => { }) <br><br> <span class=\"topic\">httpTestingController</span> <br> <span class=\"test\">const req = hTC.expectOne(URL: string, descrption?: string)</span> <br>-pass in URL we expect but doesn't send any results back <br> <span class=\"test\">req.flush({id: 4, name: 'Superman'})</span> <br>-decide what data to send back <br> <span class=\"test\">hTC.verify();</span> <br>-verifies only requests we expected (extra calls would fail test)"
+          },
+          {
+              "word": "Triggering Events on Elements",
+              "frequency": "daily",
+              "definition": 
+              "-Component is a subclass of a directive so we can grab child components with <span class=\"code\">const heroComponents = fixture.debugElement.queryAll(By.directive(HeroComponent));</span> <br>How to handle $event.stopPropagation <br> <span class=\"code\">heroComponents[0].query(By.css('button')).triggerEventHandler('click', {stopPropagation: () => {}});</span> <br> OR <br> <span class=\"code\">(<HeroComponent>heroComponent[0].componentInstance).delete.emit(undefined)</span> <br>-don't need to emit a value because there was no value <br> OR <br> <span class=\"code\">heroComponents[0].triggerEventHandler('delete', null);</span> <br>-Neither is better but subjective. Do you want to worry about the bindings between child and parent or you might not have to worry about child component is working correctly <br><br> Method 1: <br> spyOn(fixture.componentInstance, 'delete') <br> expect(fixture.componentInstance.delete).toHaveBeenCalledWith(HEROES[0]); <br><br> My method: <br> expect(mockHeroService.deleteHero).toHaveBeenCalledWith(HEROES[0)"
           },
           {
               "word": "",
