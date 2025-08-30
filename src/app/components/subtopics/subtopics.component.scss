@@ -8,6 +8,10 @@ td {
   border-image: linear-gradient(to bottom, #ccc, #fff) 1;
 }
 
+::ng-deep .images {
+  max-height: 550px;
+}
+
 ::ng-deep span.test {
   color: #FFA500;
 }

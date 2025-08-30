@@ -113,14 +113,14 @@
             "definition": "<span class=\"topic\">Template</span> <br>-Angular generates Form model <br> <span class=\"topic\">Reactive</span> <br>-properties for data binding"
           },
           {
-            "word": "Directives",
+            "word": "Angular Form Directives",
             "frequency": "daily",
-            "definition": "<span class=\"topic\">Template</span> <br>-import FormModule <br>-ngForm (form model), ngModel (two way binding and state), ngModelGroup (grouping elements within the form) <br>-Angular assigns ngForm directive to the form element inside template <br>-use TRV (#signUpForm=\"ngForm\") to access form model state information inside template <br><br> <span class=\"test\">Input</span> <br>-Angular creates formControl for [(ngModel)]=\"customer.firstName\" inside input element <br>-use the name=\"firstName\" as the key <br>-access state by TRV #firstNameVar=\"ngModel\". Ex: [ngClass]=\"{'is-invalid': firstNameVar.touched etc...  }\" <br><br> <span class=\"topic\">Reactive</span> <br>-import ReactiveFormsModule <br>-formGroup/Control/ControlName/GroupName <br>-doesn't use two way binding and TRV"
+            "definition": "<span class=\"topic\">Template</span> <br>-import FormModule <br>-ngForm (form model), ngModel (two way binding and state), ngModelGroup (grouping elements within the form) <br>-Angular assigns ngForm directive to the form element inside template <br>-use TRV (#signUpForm=\"ngForm\") to access form model state information inside template <br><br> <span class=\"test\">Input</span> <br>-Angular creates formControl for [(ngModel)]=\"customer.firstName\" inside input element <br>-use the name=\"firstName\" as the key <br>-access state by TRV #firstNameVar=\"ngModel\". Ex: [ngClass]=\"{'is-invalid': firstNameVar.touched etc...  }\" <br><br> <span class=\"topic\">Reactive</span> <br>-import ReactiveFormsModule <br>-formGroup/Control/ControlName/GroupName <br>-doesn't use two way binding and TRV <br>-form element, [formGroup]=\"customerForm\" <br>-input element, formControlName=\"firstName\", no [] because we are binding to a string, not a property"
           },
-                    {
-            "word": "",
+          {
+            "word": "Acccessing FormModel Properties",
             "frequency": "daily",
-            "definition": ""
+            "definition": "-customerForm.controls.firstName.valid <br>-customerForm.get('firstName').valid"
           },
           {
             "word": "",
@@ -133,9 +133,9 @@
             "definition": ""
           },
           {
-            "word": "",
+            "word": "Misc",
             "frequency": "daily",
-            "definition": ""
+            "definition": "AbstractControl <br>-base class for FormControl/Group <br>"
           }
         ]
       },
@@ -173,10 +173,22 @@
               "<span class=\"test\">Descriptive and Meaningful Phrases</span> <br>-repeat yourself if necessary"
           },
           {
+              "word": "Testing Pipes/Services",
+              "frequency": "daily",
+              "definition": 
+              "-Just currently use let x = new MessageService(), check later"
+          },
+          {
+              "word": "jasmine.createSpyObj",
+              "frequency": "daily",
+              "definition": 
+              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/3.5.png\"> <br>26: -creates a mock object we can control <br>-can tell what methods, what to return, and what methods were called <br>34-problem deleteHero was returning an observable <br>-since we are just subscribing to the result (dont care about data), just return any observable"
+          },
+          {
               "word": "Testbed",
               "frequency": "daily",
               "definition": 
-              "-allows us to test component and its html <br>-before -> let: heroComponent = new HeroComponent(mockHeroService); but only was testing components <br><br> <span class=\"topic\">Steps</span> <br> <span class=\"test\">Module</span> <br>-Testbed.configureTestbedModule <br>-creating another module (add the necessary services, components) <br><br> <span class=\"test\">Fixture</span> <br>-let fixture: ComponentFixture<HeroComponent> = Testbed.createComponent(HeroComponent);"
+              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/4.3.png\"> <br> 55-allows us to test component with its template <br><br> Testing Module <br>51-like recreating a tiny version of your app just for testing <br>-Use when for Angular specific (component, services with DI) <br>-Don't use when classes with no dependencies or testing pure functions (helpers, simple utility methods)"
           },
           {
               "word": "Fixture",
@@ -206,7 +218,13 @@
               "word": "Mocking Injected Service",
               "frequency": "daily",
               "definition": 
-              "-don't want to make real HTTP calls and don't want to test two units at the same time <br>-uses long handed way in module providers: [ { provide: HeroService, useValue: mockHeroService}]"
+              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/4.8.png\"> <br>-don't want to make real HTTP calls and don't want to test two units at the same time <br>-uses long handed way in module providers: [ { provide: HeroService, useValue: mockHeroService}]"
+          },
+          {
+              "word": "fixture.detectChanges()",
+              "frequency": "daily",
+              "definition": 
+              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/4.8.2.png\"> <br>-TestBed.createComponent(), at this point the component instance exists but Angular hasn't  run change detection yet, meaning the template hasn't been rendered, bindings aren't resolved, lifecycle hooks like ngOnInit haven't been called <br>-fixture.detectChanges() triggers Angular's change detection cycle manually <br><br>3 scenarios when you dont need it <br>-testing component class or pure function, manually setting up state, testing with fakeAsync and tick <br>Old <br>-In Angular, changeDetection causes lifecycles events to run <br>-orginally did component.ngOnInit(); but thise doesn't follow integration tests. We want Angular to handle these things"
           },
           {
               "word": "Finding Elements by Device",
@@ -218,7 +236,7 @@
               "word": "Setting Up Integration Testing of Services and HTTP mock and methods",
               "frequency": "daily",
               "definition": 
-              "-Services doesn't have HTML but mostly have HTTP (Angular has a special HTTP mock service) <br>-import HttpClientTestingModule and inject HttpTestingController from @angular/common/http/testing <br><br> <span class=\"topic\">Two Ways on Injecting</span> <br>1: httpTestingController = Testbed.inject(HttpTestingController); <br>2: use inject( [HeroService], (service:HeroService) => { }) <br><br> <span class=\"topic\">httpTestingController</span> <br> <span class=\"test\">const req = hTC.expectOne(URL: string, descrption?: string)</span> <br>-pass in URL we expect but doesn't send any results back <br> <span class=\"test\">req.flush({id: 4, name: 'Superman'})</span> <br>-decide what data to send back <br> <span class=\"test\">hTC.verify();</span> <br>-verifies only requests we expected (extra calls would fail test)"
+              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/5.6.png\"> <br>-Services doesn't have HTML but mostly have HTTP (Angular has a special HTTP mock service) <br>-import HttpClientTestingModule and inject HttpTestingController from @angular/common/http/testing <br><br> <span class=\"topic\">Two Ways on Injecting</span> <br>1: httpTestingController = Testbed.inject(HttpTestingController); <br>2: use inject( [HeroService], (service:HeroService) => { }) <br><br> <span class=\"topic\">httpTestingController</span> <br> <span class=\"test\">const req = hTC.expectOne(URL: string, descrption?: string)</span> <br>-pass in URL we expect but doesn't send any results back <br> <span class=\"test\">req.flush({id: 4, name: 'Superman'})</span> <br>-decide what data to send back <br> <span class=\"test\">hTC.verify();</span> <br>-verifies only requests we expected (extra calls would fail test)"
           },
           {
               "word": "Triggering Events on Elements",
@@ -227,10 +245,104 @@
               "-Component is a subclass of a directive so we can grab child components with <span class=\"code\">const heroComponents = fixture.debugElement.queryAll(By.directive(HeroComponent));</span> <br>How to handle $event.stopPropagation <br> <span class=\"code\">heroComponents[0].query(By.css('button')).triggerEventHandler('click', {stopPropagation: () => {}});</span> <br> OR <br> <span class=\"code\">(<HeroComponent>heroComponent[0].componentInstance).delete.emit(undefined)</span> <br>-don't need to emit a value because there was no value <br> OR <br> <span class=\"code\">heroComponents[0].triggerEventHandler('delete', null);</span> <br>-Neither is better but subjective. Do you want to worry about the bindings between child and parent or you might not have to worry about child component is working correctly <br><br> Method 1: <br> spyOn(fixture.componentInstance, 'delete') <br> expect(fixture.componentInstance.delete).toHaveBeenCalledWith(HEROES[0]); <br><br> My method: <br> expect(mockHeroService.deleteHero).toHaveBeenCalledWith(HEROES[0)"
           },
           {
-              "word": "",
+              "word": "Testing DOM Interaction WIP",
               "frequency": "daily",
               "definition": 
               ""
+          },
+          {
+              "word": "Testing DOM Interaction WIP",
+              "frequency": "daily",
+              "definition": 
+              ""
+          },
+          {
+              "word": "Testing DOM Interaction WIP",
+              "frequency": "daily",
+              "definition": 
+              ""
+          },
+          {
+              "word": "Angular Unit Testing Misc",
+              "frequency": "daily",
+              "definition": 
+              "<span class=\"topic\">Interaction/State</span> <br>-state is where you check the state of the component <br>-interaction is where it was called with the correct parameter, going to check if a certain interaction happened between the class we are testing and some collaborator class <br><br> <span class=\"topic\">ngOnInit</span> <br>-we would have to manually call it ourselves because Angular framework is not running therefore is not automatically initializing the component"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Async",
+    "subTopicList": [
+      {
+        "name": "Async",
+        "flashcards" : [
+          {
+            "word": "Synchronous vs Asynchronous",
+            "frequency": "daily",
+            "definition": 
+            "Synchronous <br>-tasks run in blocking order (waits until it is completed) <br><br> Asynchronous <br>-tasks run independently without blocking <br>-program keeps going while some tasks wait in the background <br>-useful for API, I/O, timers <br><br> JavaScript <br>-synchronous by default (single threaded model meaning one task a time in main thread) <br>-but uses event loop + browser APIs to handle asynchronous tasks using callingback, promises, async/await and web APIs <br><br> How It Works (ChatGPT) <br>1.JS runs sync <br>2. hits async code, offloads that task to a WEB API <br>3. when tasks finishes, it's added to event queue <br>4. Event loop checks the queue and runs callbacks when main thread is free"
+          },
+          {
+            "word": "Callbacks",
+            "frequency": "daily",
+            "definition": 
+            "-a function that is passed as an arguement inside another function"
+          },
+          {
+            "word": "Promises",
+            "frequency": "daily",
+            "definition": 
+            "-an object that represents the eventual completion/failure of an asynchronous operation, and its resulting value <br>-not lazy, eagerly evaluated <br>-once resolved, it will not create a new Promise (setInterval example)" 
+          },
+          {
+            "word": "Chaining, Catching Errors, Last Operation in Promises",
+            "frequency": "daily",
+            "definition": 
+            "<img class=\"images\" src=\"../assets/images/async/3.4-5.png\"> <br>-then() will return a promise <br>-typically one catch is enough but if you wanted more control <br>-if you threw a new Error, it will go to next catch() <br>-want to execute after a promise settles but don't care if successful or not (like removing a loading indicator"
+          },
+          {
+            "word": "Promise.all/allSettled and race",
+            "frequency": "daily",
+            "definition": 
+            "<img class=\"images\" src=\"../assets/images/async/4.4.png\"> <br>all <br>-when several function are independent of each other but need all of them to continue <br>-want to batch all of my calls and fire at once. the power of async <br><br> <img class=\"images\" src=\"../assets/images/async/4.5.png\"> <br>allSettled <br>-useful when if you dont care if some calls fail <br>-will wait until all promises settle (fulfilled or rejected) <br>-{ status: \"fulfilled\", value: {} } OR { status: \"rejected\", reason: {} }<br>-doesn't have a catch but still recommended <br><br> <img class=\"images\" src=\"../assets/images/async/4.6.png\"> <br>race <br>-will wait until first promise is settled <br>-rarely used"
+          },
+          {
+            "word": "Async/Await",
+            "frequency": "daily",
+            "definition": 
+            "-syntactic sugar for promises <br>-helps write promises in synchronous format <br><br> <span class=\"topic\">Async</span> <br>-async functions will return an implicit promise <br><br><span class=\"topic\">await</span> <br>-pauses the execution of an async function while it waits for the promose to be fulfilled <br>-blocks the current function but does not block calling functions"
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": 
+            "<br><img class=\"images\" src=\"../assets/images/async/5.6.png\"><br>"
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": 
+            ""
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": 
+            ""
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": 
+            ""
+          },
+          {
+            "word": "",
+            "frequency": "daily",
+            "definition": 
+            ""
           }
         ]
       }
@@ -271,7 +383,7 @@
             "definition": "groupdId and artifactId are used to uniquely identify your project <br> groupdId <br> -takes the reverse of the domain name (package name) <br> artifactId <br> -projectId <br> versions <br> -SNAPSHOT means WIP (not a release version) <br>-RC "
           },
           {
-            "word": "properties",
+            "word": "maven properties",
             "frequency": "daily",
             "definition": "specify the version here"
           },
@@ -293,7 +405,7 @@
           {
             "word": "maven repository",
             "frequency": "daily",
-            "definition": "-teams can have their own maven repository <br>-when maven tries to download dependency it tries to ask the remotes (global repo) and the downloads it into m2 so it can be reused"
+            "definition": "-location that stores build artifacts (JAR, plugins, dependencies) <br>-looks for pom.xml when you build project with Maven <br><br>Steps <br> 1. Maven checks your local repo (~/.m2/repository) <br> 2. If not present then central or remote/private (company-hosted repos) like Nexus, Artifcatory <br>-when maven tries to download dependency it tries to ask the remotes (global repo) and the downloads it into m2 so it can be reused (cached aka no re-download)"
           },
           {
             "word": "parent pom aka (BOM)",
@@ -343,13 +455,88 @@
             "word": "ETFs",
             "frequency": "daily",
             "definition": 
-            "exchange traded funds <br>-mix between index funds and stocks <br>-Low feeds (0.03-0.75%) <br>-passively managed (usually trackin iindex)"
+            "exchange traded funds <br>-mix between index funds and stocks <br>-Low feeds (0.03-0.75%) <br>-passively managed (usually trackin index)"
           }
         ]
       },
       {
         "name": "Retirement",
         "flashcards": []
+      }
+    ]
+  },
+  {
+    "name": "Typescript",
+    "subTopicList": [
+      {
+        "name": "Typescript 5 Fundamentals",
+        "flashcards": [
+          {
+            "word": "Typescript Commands",
+            "frequency": "daily",
+            "definition": "tsc --outDir js --watch app.ts <br>-refers to a directory where the output of program is, compiler will watch for file changes <br><br> tsc --init <br>-creates a tsconfig.json <br><br>TypeScript Project Configuration <br> <img class=\"images\" src=\"../assets/images/typescript/2-4.png\">"
+          },
+          {
+            "word": "Typescript Parameters",
+            "frequency": "daily",
+            "definition": "<span class=\"test\">Optional Parameters</span> <br>-denoted with ? (title?: string) <br>-must apppear after required parameters <br>-will return undefined if not present (not null) <br><br><span class=\"test\">Default</span> <br>-treated as optional if they appear after all parameter <br>-don't have to add ? <br><br> <span class=\"test\">Rest</span> <br>...title: string[] <br>-think of it as rest of the parameters <br>-must be last and always captured in an array"
+          },
+          {
+            "word": "Typescript Function Overloads",
+            "frequency": "daily",
+            "definition": "-TS compiles to JS which doesn't have type annotations (removed at compile time) <br>-Therefore, you provide multiple function signatures but ony provide one implementation"
+          },
+          {
+            "word": "Typescript Classes",
+            "frequency": "daily",
+            "definition": "-can only create one constructor so use optional parameters to call different ways <br>-can declare public/private variables inside constructor constructor(public name: string)" 
+          },
+          {
+            "word": "Typescript and Java Access Modifiers",
+            "frequency": "daily",
+            "definition": "TS <br>-public (default) <br>-protected: inside class and subclasses <br>-private: only class <br>-doesn't have packages instead it has modules (files) <br>-control visiblity by export/import, not access modifies <br><br> Java <br>-public: anywhere <br>-protected: same package and subclasses <br>-package-private: same package (default) <br>-private: same class"
+          },
+          {
+            "word": "Typescript Modules",
+            "frequency": "daily",
+            "definition": "-instead of packages, TS have modules (files) <br>-export default class Person <br>-If no { } then it would import default and can name it anything Ex. import Teacher from \"./person\" <br>-named exports must use { } <br>-can also use alias for exports and imports <br><br> <span class=\"topic\">Relative vs Non relative</span> <br>-relative (/, ./, ../) for own modules and non-relative for 3rd party modules (import * as _ from 'lodash')"
+          },
+          {
+            "word": "TypeScript Promises",
+            "frequency": "daily",
+            "definition": "<img class=\"images\" src=\"../assets/images/typescript/8.3.png\"> <br>Line 28: You can another parameter and it will act as a reject, therefore catch funtion will no longer be called"
+          },
+          {
+            "word": "Try/Catch with Async/Await (Typescript Fundamentals)",
+            "frequency": "daily",
+            "definition": "-You can do it try/catch inside async but cleaner code but be on the async function itself logSearchResults('asd').catch(reason => console.error(reason))"
+          },
+          {
+            "word": "Generics",
+            "frequency": "daily",
+            "definition": "-lets you create resuable, flexible code by writing functions, classes, or types that works with any type while preserving type safety <br><br>class Attack<T extends Monster> <br>-apply constraint, T must be a subclass of Monster <br><br> <img class=\"images\" src=\"../assets/images/typescript/gpt.png\">"
+          },
+          {
+            "word": "Typescript Type Declaration Files",
+            "frequency": "daily",
+            "definition": "-Typescript wrapper for JS libraries, tells TS the shape of code with actual implementation <br>-provides autocompletion (because it gives it the types) + error checking <br>-filename end with d.ts <br>npm install lodash && npm install @types/lodash"
+          },
+          {
+            "word": "Typescript Decorator",
+            "frequency": "daily",
+            "definition": "-function that is applied to other code (@Logger)"
+          },
+          {
+            "word": "Typescript Source Maps",
+            "frequency": "daily",
+            "definition": "-tsc maps your TS code to JS (*.js.map) <br>sourceMap=true in tsconfig.json <br>-allows you to debug in .ts files <br>-start 'Javascript Debug Terminal' + run node app.js <br>-ng service builds .map by default (development mode) <br>-can check by looking at Sources tab and you ts file instead of js files, but ng build --prod(not on by default) <br><br>-remember to use watch"
+          },
+          {
+            "word": "Typescript Misc",
+            "frequency": "daily",
+            "definition": "-JS moves all variables declarations to top <br>Annotation <br>- add notes giving explanation or comment (name: string) <br> Inferences <br>-guess it for you <br>Never <br>-type that will never occur (a function that will never return like infinite loop, throws error) <br>JS: all functions parameters are optional, TS are all required <br>Arrow Functions (aka lambda) => (fat arrow + greater than) <br>Function Types: let releaseFunc: (some:number) => string <br>"
+          }
+        ]
       }
     ]
   }

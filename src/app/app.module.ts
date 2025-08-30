@@ -10,10 +10,13 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TopicService } from './services/TopicService';
 import { RouterModule, Routes } from '@angular/router';
 import { SubtopicsComponent } from './components/subtopics/subtopics.component';
-import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
+import { ReactiveFormComponent } from './learning/forms/reactive-form/reactive-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   // Need to change this 404
+  // {path: "main", component: MainComponent },
+  // {path: "reactive-form", component: ReactiveFormComponent },
   {path: "**", component: MainComponent }
 ]
 @NgModule({
@@ -29,7 +32,9 @@ const routes: Routes = [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     HttpClient,
