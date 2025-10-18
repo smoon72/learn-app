@@ -3,6 +3,11 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
+
+  // let mockMessageService = jasmine.createSpyObj('MessageService', ['add', 'clear']);
+
+  let mockMessageservice: jasmine.SpyObj<any>;
+
   beforeEach(() => TestBed.configureTestingModule({
     imports: [RouterTestingModule],
     declarations: [AppComponent]
@@ -12,11 +17,14 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
+  }); 
 
   it(`should have as title 'learn-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+
+    jasmine.createSpyObj
+
     expect(app.title).toEqual('learn-app');
   });
 

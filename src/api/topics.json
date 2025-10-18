@@ -9,13 +9,13 @@
             "word": "Angular",
             "frequency": "daily",
             "definition": 
-            "<ol><li>client-side framework (not ran on server)</li><li>Progressive Web Apps (PWAs): <ol><li>web app that can be installed on a device as a standalone</li><li>provide native app like experience (specifically designed for particular platform)</li><li>Offline Support</li></ol></li></ol>"
+            "-client side frontend web framework <br>-follows SPA(single page application), app loads once and updates without refreshing the whole page <br>-provides data binding, dependency injection, routing, forms & validation"
           },
           {
             "word": "native",
             "frequency": "daily",
             "definition": 
-            "Pros:<ol><li>Better Performance</li><li>Tighter Integration</li><li>More features</li></ol> <br> Cons: <ol><li>Platform Lock in</li><li>Higher Development Costs</li><li>Limited cross platform compatibility</li></ol>"
+            "-built in <br>-if you can run it without installing libararies <br><br>Programming Languages <br>-provided by language itself (Arrays.map) <br>non-native: a library function like lodash.map or Angular's HTTPClient, these are written on top of JS, not part of core language <br><br>Angular <br>native: *ngIf, FormControl, NgModule <br>non: p-table (primeNG)"
           },
           {
             "word": "Typescript",
@@ -25,32 +25,32 @@
           {
             "word": "npm",
             "frequency": "daily",
-            "definition": "<ol><li>free, open source registry of JS packages (pre-written code modules)</li><li>CLI for interacting with repository/registry</li><ol>npm install -g @angular/cli<li>installs other package</li><li>generates node_modules (where node installs our packages)</li><li>-g stands for global, -g flag is not specific to Angular</li></ol></ol>"
+            "definition": "-node package manager for Node.js (app store for JS code) <br>-installed with Node.js <br>-CLI for interacting with repository/registry of JS packages <br>-npm install -g @angular/cli <br><br> package.json <br>-npm uses it to install dependencies (packages/modules) into node_modules <br>-devDependencies may include typescript, jasmine/karma, or cli <br>package-lock.json defines exact version while package.json defines what versions are acceptable <br>^17.0.0 -> allows updates like 17.1.0 or 17.0.2 but not 18.0.0 <br>~7.8.0 -> allows 7.8.x but not 7.9.0 <br><br>Node.js <br>-runtime env for Javascript outside the browser <br>-makes JS fullstack <br>-powers Angular CLI thru scripts (ng serve/build) <br><image src=\"../assets/images/angular-getting-started/gpt.png\">"
           },
           {
-            "word": "Decorator @()",
+            "word": "Angular Decorator @()",
             "frequency": "daily",
             "definition": "-function that adds metadata to class"
           },
           {
             "word": "Directive",
             "frequency": "daily",
-            "definition": "-a way to extend functionality of HTML elements <br>-can create custom elements, attributes, and classes <br><br> <span class=\"test\">Component Directive</span>  <br>-something that has a template <br><br> <span class=\"test\">Attribute Directive</span> <br>-ngClass, ngStyle <br>-add behavior to an existing element <br><br> <span class=\"test\">Structural Directive</span> <br>-ngIf, ngFor <br>-change the structure of DOM"
+            "definition": "-classes that manipulate DOM <br>-a way to extend functionality of HTML elements <br>-can create custom elements, attributes, and classes <br><br> <span class=\"test\">Component Directive</span>  <br>-special type of directive with a template (\"<app-hero></app-hero>\") <br><br> <span class=\"test\">Attribute Directive</span> <br>-ngClass, ngStyle <br>-change how element looks/behaves <br><br> <span class=\"test\">Structural Directive</span> <br>-ngIf, ngFor <br>-change the structure of DOM"
           },
           {
-            "word": "Boostrap",
+            "word": "Bootstrap",
             "frequency": "daily",
             "definition": "<ol><li>self starting process that loads and goes</li><li>defines the starting component of app Ex. bootstrap: [AppComponent]</li><li>Typically in main.ts</li></ol>"
           },
           {
-            "word": "Module @NgModule({})",
+            "word": "Angular  Module @NgModule({})",
             "frequency": "daily",
-            "definition": "-helps us organize our apps into blocks of functionality <br>-Components must be declared to only one Angular Module <br>-Declarations: can declare its own components, directives, and pipes <br>-Import: modules can import other modules, which means it can use their components, services <br>-Provides: can provide servies (instances of classes that provide some functionality) <br><br>-Types <br>-Root: top level and bootstrapped <br>-Feature: provides specific feature <br>-Shared: provides set of shared components, services and other entities"
+            "definition": "-helps us organize our apps into blocks of functionality <br>-lazy loaded, only loaded when needed <br>-Components must be declared to only one Angular Module <br><br> @NgModule({}) <br>declarations: components, directives, and pipes <br>import: <br>imports are not inherited, importing module, does not give access to its imported module <br>-import 3rd party services <br> export: things you want to make available to other modules <br>provides: your own services but old way. Instead use, @Injectable({providedIn: 'root'})<br>bootstrap: root component Angular starts when starting the app <br>-should only be used in root app module (AppModule) <br><br>Types <br>-Root: top level and bootstrapped <br>Feature: provides specific feature (UserModule, ProductModule) <br>Shared: holds reusable components, directives, and pipes across multiple modules <br>Code: holds singleton services (like authentication, API services), imported only once in AppModule <br><br>Standalone <br>Barrel File <br>-imports from index.ts file if exists"
           },
           {
             "word": "style.css",
             "frequency": "daily",
-            "definition": "<ol><li>global style sheet</li><li>makes the style <font color=\"red\">This word is red</font> sheet available to all templates</li><li>npm install bootstrap font-awesome -> @import \"bootstrap/dist/css/bootstrap.min.css\"</li></ol>"
+            "definition": "-global style sheet <br> makes the style <font color=\"red\">This word is red</font> <br>-sheet available to all templates <br>npm install bootstrap font-awesome -> @import \"bootstrap/dist/css/bootstrap.min.css\""
           },
           {
             "word": "Data Binding",
@@ -60,17 +60,17 @@
           {
             "word": "Pipes",
             "frequency": "daily",
-            "definition": " "
+            "definition": "-implements PipeTransform (transform method) <br>-{{ product.productCode | convertToSpaces:'-'}} //surrounded the td tags <br>"
           },
           {
             "word": "Lifecycle Hooks",
             "frequency": "daily",
-            "definition": "OnInit: Perform component initialization, retrieve data <br> OnChanges: Perform action after change to input properties <br> OnDestroy:  Peform cleanup "
+            "definition": "-lifecycle hooks is an interface we implement <br>OnInit: Perform component initialization, retrieve data <br> OnChanges: Perform action after change to input properties <br> OnDestroy:  Peform cleanup "
           },
           {
             "word": "Nested Components", 
             "frequency": "daily",
-            "definition": "Stil needs to be declared in module <br> @Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number <br><br>  @Output event is the only way to pass event to pass parent <br> Child Class: <br> @Output() notify: EventEmitter<T> = new EventEmitter<>(); <br> onClick(){ this.notify.emit('clicked') } <br> Parent HTML: (notify)='onNotify($event)' "
+            "definition": "Stil needs to be declared in module <br> @Input <br> Parent HTML: [rating]='product.starRating' <br> Child Class: @Input() rating: number <br><br> @Output <br> -event is the only way to pass event to pass parent <br> <img src=\"../assets/images/angular-getting-started/8-6.png\">"
           },
           {
             "word": "Service",
@@ -80,17 +80,22 @@
           {
             "word": "RxJS",
             "frequency": "daily",
-            "definition": "-library for composing data using observable sequences <br> <span class=\"test\">Observable</span> -nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete "
+            "definition": "-library for composing data using observable sequences <br> <span class=\"test\">Observable</span> <br>-a collection of items over time but doesn't retain items  <br>-nothing until we subscribe (think of a streaming service) <br>-once subscribed, Observable emits 3 types of notifications next, error, and complete <br> <span class=\"test\">Subscribing</span> <br>-takes an Observer object as an optional argument"
           },
           {
             "word": "Router",
             "frequency": "daily",
-            "definition": "import like http module <br>-define a base element in index.html  {path: products/:id, component: ProductDetailComponent} -:id is a route parameter <br>-** denotes a wildcard path <br>-no leading slashes <br>-first match stragery so order matters <br>-Add to RouterModule.forRoot({}) in app.module.ts "
+            "definition": "import like http module <br>-define a base element in index.html <br>base href=\"/\" <br> {path: products/:id, component: ProductDetailComponent} <br>-:id is a route parameter <br>-** denotes a wildcard path <br>-no leading slashes <br>-first match stragery so order matters <br>-Add to RouterModule.forRoot({}) in app.module.ts <br>-Angular provides two services (ActivatedRoute, Router)"
           },
           {
-            "word": "",
+            "word": "Protecting Routes with Guards",
             "frequency": "daily",
-            "definition": " "
+            "definition": "canActivate <br>-guard navigation to a route <br>canDeactivate <br>-guard navigation from a route <br> Resolve <br>-pre-fetch data before activating a route <br> canLoad <br>-prevent asynchronous routing        " 
+          },
+          {
+            "word": "Angular-Getting Started Misc",
+            "frequency": "daily",
+            "definition": "sub!: Subscription; <br>-the bang, tells tsc we will handle assignment later <br>.angular: used by compiler for caching <br>ng serve -o: o means opens in default browser <br> AppModule: normally imports BrowserModule (every browser needs this module) and also exports/imports CommonModule (ngIf, ngFor) <br>ng build: prepares your app for deployment <br> Treeshaking: shakes our code to remove any dead branches (removes any unused pieces) "
           }
         ]
       },
@@ -115,7 +120,7 @@
           {
             "word": "Angular Form Directives",
             "frequency": "daily",
-            "definition": "<span class=\"topic\">Template</span> <br>-import FormModule <br>-ngForm (form model), ngModel (two way binding and state), ngModelGroup (grouping elements within the form) <br>-Angular assigns ngForm directive to the form element inside template <br>-use TRV (#signUpForm=\"ngForm\") to access form model state information inside template <br><br> <span class=\"test\">Input</span> <br>-Angular creates formControl for [(ngModel)]=\"customer.firstName\" inside input element <br>-use the name=\"firstName\" as the key <br>-access state by TRV #firstNameVar=\"ngModel\". Ex: [ngClass]=\"{'is-invalid': firstNameVar.touched etc...  }\" <br><br> <span class=\"topic\">Reactive</span> <br>-import ReactiveFormsModule <br>-formGroup/Control/ControlName/GroupName <br>-doesn't use two way binding and TRV <br>-form element, [formGroup]=\"customerForm\" <br>-input element, formControlName=\"firstName\", no [] because we are binding to a string, not a property"
+            "definition": "<span class=\"topic\">Template</span> <br>-import FormModule <br>-ngForm (form model), ngModel (two way binding and state), ngModelGroup (grouping elements within the form) <br>-Angular assigns ngForm directive to the form element inside template <br>-use TRV (#signUpForm=\"ngForm\") to access form model state information inside template <br><br> <span class=\"test\">Input</span> <br>-Angular creates formControl for [(ngModel)]=\"customer.firstName\" inside input element <br>-use the name=\"firstName\" as the key <br>-access state by TRV #firstNameVar=\"ngModel\". Ex: [ngClass]=\"{'is-invalid': firstNameVar.touched etc...  }\" <br><br> <span class=\"topic\">Reactive</span> <br>-import ReactiveFormsModule <br>-formGroup/Control/ControlName/GroupName <br>-doesn't use two way binding and TRV <br>-form element, [formGroup]=\"customerForm\" <br>-input element, formControlName=\"firstName\", no [] because we are binding to a string, not a property <img class=\"images\" src=\"../assets/images/angular-reactive-forms/3.4.png\">"
           },
           {
             "word": "Acccessing FormModel Properties",
@@ -123,19 +128,65 @@
             "definition": "-customerForm.controls.firstName.valid <br>-customerForm.get('firstName').valid"
           },
           {
-            "word": "",
+            "word": "FormGroup",
             "frequency": "daily",
-            "definition": ""
-          },
-                    {
-            "word": "",
-            "frequency": "daily",
-            "definition": ""
+            "definition": "-inside each control is defined with a key (control name), value (AbstractControl) <br>[key: string]: AbstractControl"
           },
           {
-            "word": "Misc",
+            "word": "FormBuilder",
             "frequency": "daily",
-            "definition": "AbstractControl <br>-base class for FormControl/Group <br>"
+            "definition": "-a class to buld reactive forms <br>-provided as a service using dependency injection (inside the constructor) <br>-think of it as a factory that creates FormGroup/Controls for us <br>-less boilerplate and supports validators easily <br> <img src=\"../assets/images/angular-reactive-forms/4.8.png\" <br>-the value is the first element in an array, second element will be validators"
+          },
+          {
+            "word": "Validators",
+            "frequency": "daily",
+            "definition": "-use Valdiators class (Validators.required) <br>-3rd element are asynchronous validation and they are executed until all sync validators are passed <br><img src=\"../assets/images/angular-reactive-forms/5.1.png\">"
+          },
+          {
+            "word": "Adjusting Validation Rules at Runtime",
+            "frequency": "daily",
+            "definition": "-change it by calling setValidators on FormControl instance <br>-updating validators doesn't cause validation status to be reevaluated, so call myControl.updateValueAndValidity to be re-evaluated <br><img src=\"../assets/images/angular-reactive-forms/5.2.png\">"
+          },
+          {
+            "word": "Custom Validator",
+            "frequency": "daily",
+            "definition": "<img class=\"images\" src=\"../assets/images/angular-reactive-forms/5.4.png\"> <br>-but what if we didn't want to hardcord the values and instead use parameter <br><br><img class=\"images\" src=\"../assets/images/angular-reactive-forms/5.5.png\"> <br>-wrap the validator function in a factory function <br>-Factory Function: a regular function that creates and returns objects (or values) instead of using new <br>-called factory because it produces new objects <img src=\"../assets/images/angular-reactive-forms/chatgpt.png\">"
+
+          },
+          {
+            "word": "Cross Field Validation",
+            "frequency": "daily",
+            "definition": "<img src=\"../assets/images/angular-reactive-forms/5.6.png\">"
+          },
+          {
+            "word": "Angular Forms Reacting to Change",
+            "frequency": "daily",
+            "definition": "phoneFormControl.valueChanges.subscribe() <br>-valueChanges: property that allows us to watch for changes <br>-emits an event every time the value of a control changes (interface or programmatically) <br>statusChanges <br>-emits event on changes the validation state"
+          },
+          {
+            "word": "Displaying Validation Messages in Component Angular Forms",
+            "frequency": "daily",
+            "definition": "-instead of having logic in the HTML, have it component class <br><br> <img src=\"../assets/images/angular-reactive-forms/6.4.png\""
+          },
+          {
+            "word": "Reactive Transformation for Angular Forms",
+            "frequency": "daily",
+            "definition": "debounceTime <br>emailControl.valueChanges.pipe(debounceTime(1000)).subscribe(value => ...) <br>-ignores events until a specific time has passed without another event <br><br>throttleTime <br>-emits a value, then ignores subsequent values for a specific amount of time <br>-useful for rate limiting events like button clicks, scroll events <br><br>distinctUntilChanged <br>-suppresses duplicate consecutive items (only emits when the value is different from the last one) <br>-useful when tracking key events to prevents getting events when only the Ctrl or Shift keys are changed "
+          },
+          {
+            "word": "FormArray",
+            "frequency": "daily",
+            "definition": "-group of FormGroup/Control <br>-accessed by index, while FormGroup uses names <br><br> <img src=\"../assets/images/angular-reactive-forms/7.7.png\">"
+          },
+          {
+            "word": "Route Guards in Angular Form",
+            "frequency": "daily",
+            "definition": "<img src=\"../assets/images/angular-reactive-forms/8.7.png\""
+          },
+          {
+            "word": "Angular Form Misc",
+            "frequency": "daily",
+            "definition": "AbstractControl <br>-base class for FormControl/Group <br> novalidate <br>-tells the browser, Angular will handle the browser for template forms <br><br>this.customerForm.setValue/patch Value: patch -> only if you want to set some of the values <br>.angular folder is used for compiler for caching to improve performance"
           }
         ]
       },
@@ -188,10 +239,10 @@
               "word": "Testbed",
               "frequency": "daily",
               "definition": 
-              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/4.3.png\"> <br> 55-allows us to test component with its template <br><br> Testing Module <br>51-like recreating a tiny version of your app just for testing <br>-Use when for Angular specific (component, services with DI) <br>-Don't use when classes with no dependencies or testing pure functions (helpers, simple utility methods)"
+              "<img class=\"images\" src=\"../assets/images/angular-unit-testing/4.3.png\"> <br>-creates a fake Angular testing env <br> 55-allows us to test component with its template <br><br> Testing Module <br>51-like recreating a tiny version of your app just for testing <br>-Use when for Angular specific (component, services with DI) <br>-Don't use when classes with no dependencies or testing pure functions (helpers, simple utility methods) <br><br> <span class=\"topic\">Testbed with Standalone</span> <br>-chatGpt didnt make sense to me"
           },
           {
-              "word": "Fixture",
+              "word": "ComponentFixture for Angular Testing",
               "frequency": "daily",
               "definition": 
               "-wrapper for a component like mwnw <br>-ComponentFixture: object that represents a component and its DOM <br>-fixture.ComponentInstance //contains the component itself <br>-fixture.detectChanges() causes the lifecycle events to run, can call ngOnInit but we want Angular to handle these things? <br>-remember the span tag caused an error because hero was null, need detectChanges"
@@ -282,7 +333,7 @@
             "word": "Synchronous vs Asynchronous",
             "frequency": "daily",
             "definition": 
-            "Synchronous <br>-tasks run in blocking order (waits until it is completed) <br><br> Asynchronous <br>-tasks run independently without blocking <br>-program keeps going while some tasks wait in the background <br>-useful for API, I/O, timers <br><br> JavaScript <br>-synchronous by default (single threaded model meaning one task a time in main thread) <br>-but uses event loop + browser APIs to handle asynchronous tasks using callingback, promises, async/await and web APIs <br><br> How It Works (ChatGPT) <br>1.JS runs sync <br>2. hits async code, offloads that task to a WEB API <br>3. when tasks finishes, it's added to event queue <br>4. Event loop checks the queue and runs callbacks when main thread is free"
+            "Synchronous <br>-tasks run in blocking order (waits until it is completed) <br><br> Asynchronous <br>-tasks run independently without blocking <br>-code starts something and program moves on without waiting <br>-useful for API, I/O, timers <br><br> JavaScript <br>-synchronous by default (single threaded model meaning one task a time in main thread) <br>-but uses event loop + browser APIs to handle asynchronous tasks using callingback, promises, async/await and web APIs <br><br> How It Works (ChatGPT) <br>1.JS runs sync <br>2. hits async code, offloads that task to a WEB API <br>3. when tasks finishes, it's added to event queue <br>4. Event loop checks the queue and runs callbacks when main thread is free"
           },
           {
             "word": "Callbacks",
@@ -405,7 +456,7 @@
           {
             "word": "maven repository",
             "frequency": "daily",
-            "definition": "-location that stores build artifacts (JAR, plugins, dependencies) <br>-looks for pom.xml when you build project with Maven <br><br>Steps <br> 1. Maven checks your local repo (~/.m2/repository) <br> 2. If not present then central or remote/private (company-hosted repos) like Nexus, Artifcatory <br>-when maven tries to download dependency it tries to ask the remotes (global repo) and the downloads it into m2 so it can be reused (cached aka no re-download)"
+            "definition": "-location that stores build artifacts (JAR, plugins, dependencies) <br><br>Steps <br> 1. Maven checks your local repo (~/.m2/repository) <br> 2. If not present then central or remote/private (company-hosted repos) like Nexus, Artifcatory <br>-when maven tries to download dependency it tries to ask the remotes (global repo) and the downloads it into m2 so it can be reused (cached aka no re-download)"
           },
           {
             "word": "parent pom aka (BOM)",
@@ -529,7 +580,7 @@
           {
             "word": "Typescript Source Maps",
             "frequency": "daily",
-            "definition": "-tsc maps your TS code to JS (*.js.map) <br>sourceMap=true in tsconfig.json <br>-allows you to debug in .ts files <br>-start 'Javascript Debug Terminal' + run node app.js <br>-ng service builds .map by default (development mode) <br>-can check by looking at Sources tab and you ts file instead of js files, but ng build --prod(not on by default) <br><br>-remember to use watch"
+            "definition": "-tsc maps your TS code to JS (*.js.map) <br>sourceMap=true in tsconfig.json <br>-allows you to debug in .ts files <br>-start 'Javascript Debug Terminal' + run node app.js <br>-ng serve builds .map by default (development mode) <br>-can check by looking at Sources tab and you ts file instead of js files, but ng build --prod(not on by default) <br><br>-remember to use Watch instead of expanding objects all the time <br>-Gear opens launch.json the click on Launch Configuration"
           },
           {
             "word": "Typescript Misc",
